@@ -1,4 +1,4 @@
-name: Selenium Test
+name: Check IP Address
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  selenium-test:
+  check-ip:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,12 +18,8 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install selenium
-        sudo apt-get update
-        sudo apt-get install -y chromium-chromedriver
+    - name: Install curl
+      run: sudo apt-get install -y curl
 
-    - name: Run Selenium script
-      run: python selenium_test.py
+    - name: Run IP check script
+      run: python check_ip.py
