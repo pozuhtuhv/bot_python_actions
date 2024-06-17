@@ -1,4 +1,4 @@
-### bot_python_actions
+### github_action_python
 
 ### Process
 - 간단한 GitHub Actions 를 구성해봄
